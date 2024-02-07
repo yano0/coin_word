@@ -3,3 +3,4 @@ body {
     width: 250px;
   }
 input.textbox { width: 230px; height: 100px;}
+textarea.textbox { width: 230px; height: 100px;}
