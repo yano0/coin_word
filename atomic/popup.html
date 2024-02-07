@@ -3,14 +3,14 @@
 <meta charset="UTF-8">
   <body width="300px">
     <h1>造語ジェネレーター</h1>
-        <input type="text" id="inputText" placeholder="テキストを入力">
+        <textarea type="text" id="inputText" placeholder="テキストを入力" class="textbox"></textarea>
         <button id="generate" type="button">造語を生成！</button>
     </form>
-
     <form action="#" method="post">
         <p>生成結果<br>
-        <div id="result"></div>
-        <script src="popup.js"></script>
-      </form>
+        <textarea id="output" type="text" name="name" class="textbox" wrap="soft" class="textbox"></textarea>
+        </p>
+    </form>
+    <script src="popup.js"></script>
   </body>
 </html>

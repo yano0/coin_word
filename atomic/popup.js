@@ -14,7 +14,7 @@ generate.addEventListener('click', () => {
 	fd.append('input_text', inputText);
 
     //fetch("http://127.0.0.1:5000/generate_zougo/",{
-    fetch("https://zougogenebackend.onrender.com/generate_zougo/",{
+    fetch("https://zougogenerator.onrender.com/generate_zougo/",{
         method: "POST",
         body: fd
     }).then(response => {
@@ -25,8 +25,7 @@ generate.addEventListener('click', () => {
     })
     .then(data => {
         console.log(data); // サーバーからの応答をコンソールに表示します
-        // 出力結果の表示
-        document.getElementById("result").innerText = "造語: " + data['zougo'];
+        document.getElementById("output").value = data["zougo"];
     })
     .catch(error => {
         console.error("Fetchエラー:", error);
