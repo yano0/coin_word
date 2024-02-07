@@ -5,14 +5,19 @@ generate.addEventListener('click', () => {
     // 入力が空でないことを確認
     if(inputText.trim() !== '') {
         // APIに送信するデータを作成
-        var input = {
-        text: inputText
-        };
+    console.log(inputText)
+    data = {
+        "input_text": inputText
+    }
+
+    let fd = new FormData();
+	fd.append('input_text', inputText);
+
+    //fetch("http://127.0.0.1:5000/generate_zougo/",{
     fetch("https://zougogenebackend.onrender.com/generate_zougo/",{
         method: "POST",
-        body:JSON.stringify(input),
-        headers:{"Content-Type": "application/json"}}
-    ).then(response => {
+        body: fd
+    }).then(response => {
         if (!response.ok) {
         throw new Error("サーバーエラー: " + response.status);
         }
@@ -32,6 +37,5 @@ generate.addEventListener('click', () => {
     //             .catch(error => console.error(error));
     //         return true;
     // });
-    console.log(response);
     }
 });
