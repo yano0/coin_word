@@ -1,0 +1,10 @@
+{
+    "name": "造語ジェネレーター",
+    "description": "Let's name the phenomenon!",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_title": "Ext title",
+        "default_popup": "popup.html"
+    }
+}
