@@ -14,7 +14,7 @@ generate.addEventListener('click', () => {
 	fd.append('input_text', inputText);
 
     //fetch("http://127.0.0.1:5000/generate_zougo/",{
-    fetch("https://zougogenebackend.onrender.com/generate_zougo/",{
+    fetch("https://zougogenerator.onrender.com/generate_zougo/",{
         method: "POST",
         body: fd
     }).then(response => {
