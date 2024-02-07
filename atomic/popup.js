@@ -25,7 +25,8 @@ generate.addEventListener('click', () => {
     })
     .then(data => {
         console.log(data); // サーバーからの応答をコンソールに表示します
-        // ここで必要な処理を行います
+        // 出力結果の表示
+        document.getElementById("result").innerText = "造語: " + data['zougo'];
     })
     .catch(error => {
         console.error("Fetchエラー:", error);
