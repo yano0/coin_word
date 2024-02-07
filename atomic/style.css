@@ -1,5 +1,6 @@
 @charset "utf-8";
 body {
     width: 250px;
+    height: 500px;
   }
 input.textbox { width: 230px; height: 100px;}
