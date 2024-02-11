@@ -24,18 +24,31 @@ generate.addEventListener('click', () => {
         return response.json(); // 応答をJSON形式として解析
     })
     .then(data => {
-        console.log(data); // サーバーからの応答をコンソールに表示します
+        //成功
+        console.log(data);
         document.getElementById("output").value = data["zougo"];
+
+        var tweet_button = document.createElement("a")
+        tweet_button.setAttribute("href", "https://twitter.com/share?ref_src=twsrc%5Etfw")
+        tweet_button.setAttribute("class", "twitter-share-button")
+        tweet_button.setAttribute("data-show-count", "false")
+        tweet_button.setAttribute("data-size", "large")
+        tweet_button.setAttribute("text", "ツイート文章")
+        tweet_button.setAttribute("target", "_blank")
+        tweet_button.setAttribute("hashtags", "造語ジェネレーター")
+        tweet_button.innerText = "Xでポストする"
+
+        var script = document.createElement("script")
+        script.setAttribute("async", true)
+        script.setAttribute("src", "https://platform.twitter.com/widgets.js")
+        script.setAttribute("charset", "utf-8")
+
+        document.body.appendChild(tweet_button);
+        document.body.appendChild(script)
     })
     .catch(error => {
+        //失敗
         console.error("Fetchエラー:", error);
     });
-    // chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-    //         fetch('https://zougogenebackend.onrender.com/welcome/') // ローカルのPythonサーバーにリクエストを送信
-    //             .then(response => response.json())
-    //             .then(data => sendResponse(data))
-    //             .catch(error => console.error(error));
-    //         return true;
-    // });
     }
 });

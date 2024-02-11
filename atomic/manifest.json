@@ -9,5 +9,13 @@
     },
     "host_permissions": [
         "http://localhost:5000/"
-    ]
+    ],
+    "content_security_policy": {
+        "default_src": "'self';",
+        "script-src": "'self' 'unsafe-inline' 'unsafe-eval' platform.twitter.com d.line-scdn.net www.googletagmanager.com www.google-analytics.com connect.facebook.net;",
+        "frame-src": "'self' platform.twitter.com social-plugins.line.me staticxx.facebook.com www.facebook.com;",
+        "style-src": "'self' 'unsafe-inline';",
+        "img-src": "'self' data: platform.twitter.com syndication.twitter.com www.google-analytics.com;",
+        "font-src": "'self';"
+        }
 }
